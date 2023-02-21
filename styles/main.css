@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*HEADER*/
+
+.header {
+    /*General properties*/
+    text-align: center;
+    height: 60vh;
+    background: url('../images/hero.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.header__title {
+    /*General properties*/
+    height: 50vh;
+    color: white;
+    font-size: 6vw;
+    text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2);
+    /*Display*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__nav {
+    /*General properties*/
+    height: 10vh;
+    width: 100%;
+    background: black;
+    transition: all 0.5s;
+    /*Position*/
+    position: relative;
+    z-index: 1;
+    top: 0;
+}
+
+/*JS Class added to the boy according to vertical scroll position, greater or equal than top position of the nav menu*/
+body.js-fixed-nav .header__nav {
+    /*General properties*/  
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+    /*Position*/
+    position: fixed;
+}
+
+.header__nav--list {
+    /*General properties*/ 
+    list-style: none;
+    height: 100%;
+    /*Display*/
+    display: flex;
+}
+
+.nav__item {
+    /*General properties*/ 
+    text-align: center;
+    flex: 1;
+    /*Display*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__item--link {
+    /*General properties*/ 
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 20px;
+    transition: all 0.2s;
+}
+
+.nav__item.logo {
+    /*General properties*/ 
+    font-weight: 600;
+    font-size: 30px;
+    text-transform: uppercase;
+    max-width: 0;
+    overflow: hidden;
+    background: white;
+    transition: all 0.5s;
+}
+
+.nav__item.logo a {
+    /*General properties*/ 
+    text-decoration: none;
+    color: black;
+}
+
+body.js-fixed-nav .nav__item.logo {
+    /*General properties*/ 
+    max-width: 500px;
+}
+
+
+/*MAIN*/
+
+.site-wrap {
+    /*General properties*/ 
+    text-align: justify;
+    max-width: 700px;
+    margin: 70px auto;
+    padding: 40px;
+    background: white;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
+    transform: scale(0.98);
+    transition: transform 0.5s;
+    /*Display*/
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+body.js-fixed-nav .site-wrap {
+    /*General properties*/ 
+    transform: scale(1);
+}
+
